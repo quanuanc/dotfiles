@@ -36,9 +36,6 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
-alias dfm="git --git-dir $HOME/.dfm --work-tree=$HOME"
-alias dfmui="gitui -d $HOME/.dfm -w $HOME"
-
 list-jdk() {
     /usr/libexec/java_home -V
 }
