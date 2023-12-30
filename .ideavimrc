@@ -1,0 +1,132 @@
+let mapleader = " "
+
+""" Plugins -----------------------------
+" 给对象两端加入/更改/去除/引号, 命令 => ys, cs, ds
+Plugin 'tpope/vim-surround'
+" 命令 => o: open, i: split, s: vsplit, m: menu
+Plug 'preservim/nerdtree'
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'machakann/vim-highlightedyank'
+Plug 'dbakker/vim-paragraph-motion'
+Plug 'chrisbra/matchit'
+Plug 'tpope/vim-commentary'
+" via => select inner a arg obj, vaa => select entire a arg obj
+Plug 'vim-scripts/argtextobj.vim'
+" cxiw then dot command, exchange two word, cxc to cancel cx highlight
+Plug 'tommcdo/vim-exchange'
+
+
+""" set ---------------------------------
+set number relativenumber
+set keep-english-in-normal
+set idearefactormode=keep
+set ideastatusicon=gray
+set ideajoin
+set clipboard+=unnamed
+set scrolloff=3
+set sidescrolloff=8
+set ideamarks
+set nokeep-english-in-normal-and-restore-in-insert
+
+
+""" search -------------------------------
+set incsearch
+set hlsearch
+set smartcase
+set ignorecase
+nmap <ESC> :noh<CR>
+nmap <C-[> :noh<CR>
+vmap * "ry/<C-R>r<CR>
+
+
+""" edit action ----------------------------------
+map <M-d> "_d
+map <M-c> "_c
+imap <C-a> <Home>
+imap <C-e> <End>
+vmap v <Action>(EditorSelectWord)
+vmap V <Action>(EditorUnSelectWord)
+nmap yY ^y$
+
+
+""" navigation ----------------------------
+nmap <C-S-[> :tabm-1<CR>
+nmap <C-S-]> :tabm+1<CR>
+nmap ]d <Action>(GotoNextError)
+nmap [d <Action>(GotoPreviousError)
+nmap ]g <Action>(VcsShowNextChangeMarker)
+nmap [g <Action>(VcsShowPrevChangeMarker)
+noremap <C-h> <C-w>h
+noremap <C-l> <C-w>l
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
+
+
+""" some action ---------------------------
+map == <Action>(ReformatCode)
+nmap -- <Action>(OptimizeImports)
+nmap zc <Action>(CollapseRegion)
+nmap zo <Action>(ExpandRegion)
+nmap zC <Action>(CollapseAllRegions)
+nmap zO <Action>(ExpandAllRegions)
+nmap gD <Action>(GotoTypeDeclaration)
+nmap gR <Action>(FindUsages)
+nmap <M-k> <Action>(QuickJavaDoc)
+imap <M-k> <Action>(QuickJavaDoc)
+nmap <M-j> <Action>(ShowErrorDescription)
+imap <M-j> <Action>(ShowErrorDescription)
+nmap gi <Action>(GotoImplementation)
+nmap gI <Action>(GotoSuperMethod)
+nmap gt <Action>(GotoTest)
+nmap <leader>h <Action>(HighlightUsagesInFile)
+nmap <leader>s <Action>(SelectInProjectView)
+nmap <leader>lr <Action>(RenameElement)
+nmap <leader>fb <Action>(Find)
+nmap <leader>ff <Action>(SearchEverywhere)
+nmap <leader>fw <Action>(FindInPath)
+nmap [f <Action>(MethodUp)
+nmap ]f <Action>(MethodDown)
+nmap <leader><leader> <Action>(RecentFiles)
+nmap s <Action>(KJumpAction.Char2)
+nmap <leader>e <Action>(ActivateProjectToolWindow)
+nmap <leader>w :q<CR>
+
+
+""" run and debug, break point ----------------
+nmap \r <Action>(RunClass)
+nmap \R <Action>(Run)
+nmap \d <Action>(DebugClass)
+nmap \D <Action>(Debug)
+nmap \b <Action>(ToggleLineBreakpoint)
+nmap \q <Action>(Stop)
+nmap \p <Action>(ChooseDebugConfiguration)
+
+
+""" vcs action --------------------------------
+nmap <leader>gt <Action>(Vcs.UpdateProject)
+nmap <leader>gc <Action>(CheckinProject)
+nmap <leader>gp <Action>(Vcs.Push)
+nmap <leader>gb <Action>(Git.Branches)
+nmap <leader>ga <Action>(Annotate)
+nmap <leader>gd <Action>(Compare.SameVersion)
+nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
+
+
+""" leetcode -----------------------------------
+nmap \lr <Action>(leetcode.editor.RunCodeAction)
+nmap \lc <Action>(leetcode.editor.SubmitAction)
+
+
+""" idea specific --------------------------------
+nmap <leader>mj <Action>(ActivateDatabaseToolWindow)
+nmap <leader>mk <Action>(ActivateMavenToolWindow)
+nmap <leader>ml <Action>(HideAllWindows)
+nmap <leader>mm <Action>(RestoreDefaultLayout)
+nmap <leader>mn <Action>(StoreDefaultLayout)
+
+
+""" handler -------------------------------------
+sethandler <C-\> a:ide
+sethandler <C-e> n:ide
