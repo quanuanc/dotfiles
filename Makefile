@@ -7,6 +7,7 @@ sync:
 
 	[ -f ~/.config/wezterm/wezterm.lua ] || ln -s $(PWD)/wezterm.lua ~/.config/wezterm/wezterm.lua
 	[ -f ~/.config/nvim/init.lua ] || ln -s $(PWD)/init.lua ~/.config/nvim/init.lua
+	[ -f ~/.config/stylua.toml ] || ln -s $(PWD)/stylua.toml ~/.config/stylua.toml
 	[ -f ~/.ideavimrc ] || ln -s $(PWD)/.ideavimrc ~/.ideavimrc
 	[ -f ~/.zshrc ] || ln -s $(PWD)/.zshrc ~/.zshrc
 	[ -f ~/.zshenv ] || ln -s $(PWD)/.zshenv ~/.zshenv
