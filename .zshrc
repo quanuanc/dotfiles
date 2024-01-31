@@ -35,6 +35,7 @@ alias ff='find . -type f -name'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 list-jdk() {
     /usr/libexec/java_home -V
