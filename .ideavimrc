@@ -34,8 +34,7 @@ set incsearch
 set hlsearch
 set smartcase
 set ignorecase
-nmap <ESC> :noh<CR>
-nmap <C-[> :noh<CR>
+nmap ,, :let @/=""<CR>
 vmap * "ry/<C-R>r<CR>
 
 

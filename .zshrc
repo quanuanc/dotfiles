@@ -1,6 +1,7 @@
 # zmodload zsh/zprof # enable this line, use zprof to see zsh function load time
 source ~/.config/zsh/zsh-snap/znap.zsh
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+export EDITOR=nvim
 
 znap eval starship 'starship init zsh'
 znap prompt
@@ -36,6 +37,7 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+alias y='yazi'
 
 list-jdk() {
     /usr/libexec/java_home -V

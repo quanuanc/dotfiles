@@ -298,6 +298,7 @@ require("lazy").setup({
           javascript = { { "prettierd", "prettier" } },
           c = { "clang-format" },
           swift = { "swiftformat" },
+          yaml = { { "prettierd", "prettier" }},
         },
       })
     end,
@@ -756,6 +757,7 @@ keymap("n", "<M-e>", ":Telescope buffers<cr>", opts)
 -- Git
 keymap("n", "<leader>ga", ":Gitsigns blame_line<cr>", opts)
 keymap("n", "<leader>gd", ":Gitsigns diffthis<cr>", opts)
+keymap("n", "<leader>gr", ":Gitsigns reset_hunk<cr>", opts)
 keymap("n", "]g", ":Gitsigns next_hunk<cr>", opts)
 keymap("n", "[g", ":Gitsigns prev_hunk<cr>", opts)
 
@@ -765,7 +767,7 @@ keymap("n", "<leader>n", ":ASToggle<CR>", opts) -- auto save toggle
 keymap("n", "==", "<cmd>lua require('conform').format()<cr>", opts)
 
 --
-keymap("n", "<leader>h", ":noh<CR>", opts)
+keymap("n", ",,", ":let @/=''<CR>", opts) -- better noh, ref: https://vi.stackexchange.com/questions/184/how-can-i-clear-word-highlighting-in-the-current-document-e-g-such-as-after-se/252#252?newreg=c43d49d9c97f49c89629fb7149754e9e
 keymap("i", "<C-a>", "<Home>", opts)
 keymap("i", "<C-e>", "<End>", opts)
 keymap("n", "yY", "^y$", opts)

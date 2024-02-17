@@ -21,5 +21,7 @@ clean:
 	rm -f ~/.zshenv
 	rm -f ~/.zshrc
 	rm -f ~/.m2/settings.xml
+	rm -f ~/.ideavimrc
+	rm -f ~/.config/stylua.toml
 
 .PHONY: all clean sync
