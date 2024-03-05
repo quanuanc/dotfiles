@@ -257,7 +257,7 @@ require("lazy").setup({
           enabled = false,
         },
         search = {
-          enabled = true,
+          enabled = false,
         },
       },
     },
@@ -767,7 +767,7 @@ keymap("n", "<leader>n", ":ASToggle<CR>", opts) -- auto save toggle
 keymap("n", "==", "<cmd>lua require('conform').format()<cr>", opts)
 
 --
-keymap("n", ",,", ":let @/=''<CR>", opts) -- better noh, ref: https://vi.stackexchange.com/questions/184/how-can-i-clear-word-highlighting-in-the-current-document-e-g-such-as-after-se/252#252?newreg=c43d49d9c97f49c89629fb7149754e9e
+keymap("n", ",,", ":noh<CR>", opts) -- better noh, ref: https://vi.stackexchange.com/questions/184/how-can-i-clear-word-highlighting-in-the-current-document-e-g-such-as-after-se/252#252?newreg=c43d49d9c97f49c89629fb7149754e9e
 keymap("i", "<C-a>", "<Home>", opts)
 keymap("i", "<C-e>", "<End>", opts)
 keymap("n", "yY", "^y$", opts)
