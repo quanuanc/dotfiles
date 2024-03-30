@@ -1,38 +1,38 @@
 local wezterm = require("wezterm")
 local keys = {
-	{ key = "H", mods = "SHIFT|CTRL", action = wezterm.action.DisableDefaultAssignment },
-	{ key = "L", mods = "SHIFT|CTRL", action = wezterm.action.DisableDefaultAssignment },
-	{ key = "Enter", mods = "META", action = wezterm.action.DisableDefaultAssignment },
+  { key = "H", mods = "SHIFT|CTRL", action = wezterm.action.DisableDefaultAssignment },
+  { key = "L", mods = "SHIFT|CTRL", action = wezterm.action.DisableDefaultAssignment },
+  { key = "Enter", mods = "META", action = wezterm.action.DisableDefaultAssignment },
 
-	-- tmux like key binding
-	{ key = "s", mods = "LEADER", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
-	{ key = "v", mods = "LEADER", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
-	{ key = "o", mods = "LEADER", action = "TogglePaneZoomState" },
-	{ key = "z", mods = "LEADER", action = "TogglePaneZoomState" },
-	{ key = "c", mods = "LEADER", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
-	{ key = "h", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
-	{ key = "j", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Down" }) },
-	{ key = "k", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Up" }) },
-	{ key = "l", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Right" }) },
-	{ key = "H", mods = "LEADER|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Left", 5 } }) },
-	{ key = "J", mods = "LEADER|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Down", 5 } }) },
-	{ key = "K", mods = "LEADER|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Up", 5 } }) },
-	{ key = "L", mods = "LEADER|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Right", 5 } }) },
-	{ key = "1", mods = "LEADER", action = wezterm.action({ ActivateTab = 0 }) },
-	{ key = "2", mods = "LEADER", action = wezterm.action({ ActivateTab = 1 }) },
-	{ key = "3", mods = "LEADER", action = wezterm.action({ ActivateTab = 2 }) },
-	{ key = "4", mods = "LEADER", action = wezterm.action({ ActivateTab = 3 }) },
-	{ key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
-	{ key = "m", mods = "LEADER", action = wezterm.action({ PaneSelect = { mode = "SwapWithActive" } }) },
+  -- tmux like key binding
+  { key = "s", mods = "LEADER", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
+  { key = "v", mods = "LEADER", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
+  { key = "o", mods = "LEADER", action = "TogglePaneZoomState" },
+  { key = "z", mods = "LEADER", action = "TogglePaneZoomState" },
+  { key = "c", mods = "LEADER", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
+  { key = "h", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
+  { key = "j", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Down" }) },
+  { key = "k", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Up" }) },
+  { key = "l", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Right" }) },
+  { key = "H", mods = "LEADER|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Left", 5 } }) },
+  { key = "J", mods = "LEADER|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Down", 5 } }) },
+  { key = "K", mods = "LEADER|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Up", 5 } }) },
+  { key = "L", mods = "LEADER|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Right", 5 } }) },
+  { key = "1", mods = "LEADER", action = wezterm.action({ ActivateTab = 0 }) },
+  { key = "2", mods = "LEADER", action = wezterm.action({ ActivateTab = 1 }) },
+  { key = "3", mods = "LEADER", action = wezterm.action({ ActivateTab = 2 }) },
+  { key = "4", mods = "LEADER", action = wezterm.action({ ActivateTab = 3 }) },
+  { key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
+  { key = "m", mods = "LEADER", action = wezterm.action({ PaneSelect = { mode = "SwapWithActive" } }) },
 }
 
 local config = {}
 
 if wezterm.config_builder then
-	config = wezterm.config_builder()
+  config = wezterm.config_builder()
 end
 
-config.color_scheme = "Dracula+"
+config.color_scheme = "Terminal Basic (Gogh)"
 config.tab_bar_at_bottom = true
 config.hide_tab_bar_if_only_one_tab = true
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
@@ -46,12 +46,12 @@ config.front_end = "WebGpu"
 local platform = wezterm.target_triple
 
 if string.find(platform, "windows") then
-	config.default_prog = { "powershell.exe" }
+  config.default_prog = { "powershell.exe" }
 elseif string.find(platform, "darwin") then
-	config.font = wezterm.font_with_fallback({
-		"JetBrains Mono",
-		"PingFang SC",
-	})
+  config.font = wezterm.font_with_fallback({
+    "JetBrains Mono",
+    "PingFang SC",
+  })
 end
 
 return config
