@@ -1,6 +1,8 @@
 # zmodload zsh/zprof # enable this line, use zprof to see zsh function load time
+[[ -r ~/.config/zsh/zsh-snap ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/.config/zsh/zsh-snap
 source ~/.config/zsh/zsh-snap/znap.zsh
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 export EDITOR=nvim
 
 znap eval starship 'starship init zsh'
@@ -11,12 +13,11 @@ znap source zsh-users/zsh-completions
 znap source zsh-users/zsh-autosuggestions
 
 # fnm & zoxide
-znap eval fnm 'fnm env --use-on-cd'
+znap eval fnm 'fnm env --shell zsh'
 znap eval zoxide 'zoxide init zsh --cmd z'
-znap eval zoxide 'atuin init zsh --disable-up-arrow'
+znap eval atuin 'atuin init zsh --disable-up-arrow'
 
-# ignore duplicate history
-setopt HIST_IGNORE_DUPS
+zstyle ':znap:*:*' git-maintenance off
 
 # alias
 alias l='ls -lFh'     #size,show type,human readable
