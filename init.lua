@@ -90,7 +90,15 @@ require("lazy").setup({
   { "hrsh7th/nvim-cmp", event = "VeryLazy" },
   { "hrsh7th/cmp-nvim-lsp", event = "VeryLazy" },
   { "L3MON4D3/LuaSnip", event = "VeryLazy" },
-  { "RRethy/vim-illuminate", event = "VeryLazy" },
+  {
+    "RRethy/vim-illuminate",
+    event = "VeryLazy",
+    config = function()
+      require("illuminate").configure({
+        large_file_cutoff = 5000,
+      })
+    end,
+  },
   { "inkarkat/vim-ReplaceWithRegister", event = "VeryLazy" },
   { "tpope/vim-sleuth", event = "VeryLazy" },
   {
@@ -298,7 +306,7 @@ require("lazy").setup({
           javascript = { { "prettierd", "prettier" } },
           c = { "clang-format" },
           swift = { "swiftformat" },
-          yaml = { { "prettierd", "prettier" }},
+          yaml = { { "prettierd", "prettier" } },
         },
       })
     end,
@@ -777,7 +785,9 @@ keymap("n", "cx", "<cmd>lua require('substitute.exchange').operator()<CR>", opts
 keymap("n", "cxx", "<cmd>lua require('substitute.exchange').line()<CR>", opts)
 keymap("v", "cx", "<cmd>lua require('substitute.exchange').visual()<CR>", opts)
 
--- auto commands
+-------------------
+-- auto commands --
+-------------------
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "qf", "help", "man", "lspinfo", "spectre_panel" },
   callback = function()
@@ -788,9 +798,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
--------------------
--- auto commands --
--------------------
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "gitcommit", "markdown" },
   callback = function()
