@@ -1,7 +1,7 @@
 let mapleader = " "
+nmap <C-Space> <Action>(LeaderAction)
 
 """ Plugins -----------------------------
-" 给对象两端加入/更改/去除/引号, 命令 => ys, cs, ds
 Plugin 'tpope/vim-surround'
 " 命令 => o: open, i: split, s: vsplit, m: menu
 Plug 'preservim/nerdtree'
@@ -10,9 +10,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'dbakker/vim-paragraph-motion'
 Plug 'chrisbra/matchit'
 Plug 'tpope/vim-commentary'
-" via => select inner a arg obj, vaa => select entire a arg obj
 Plug 'vim-scripts/argtextobj.vim'
-" cxiw then dot command, exchange two word, cxc to cancel cx highlight
 Plug 'tommcdo/vim-exchange'
 
 
@@ -34,7 +32,7 @@ set incsearch
 set hlsearch
 set smartcase
 set ignorecase
-nmap ,, :let @/=""<CR>
+nmap <ESC><ESC> :noh<CR>
 vmap * "ry/<C-R>r<CR>
 
 
@@ -82,15 +80,9 @@ nmap gt <Action>(GotoTest)
 nmap <leader>h <Action>(HighlightUsagesInFile)
 nmap <leader>s <Action>(SelectInProjectView)
 nmap <leader>lr <Action>(RenameElement)
-nmap <leader>fb <Action>(Find)
-nmap <leader>ff <Action>(SearchEverywhere)
-nmap <leader>fw <Action>(FindInPath)
 nmap [f <Action>(MethodUp)
 nmap ]f <Action>(MethodDown)
-nmap <leader><leader> <Action>(RecentFiles)
 nmap s <Action>(KJumpAction.Char2)
-nmap <leader>e <Action>(ActivateProjectToolWindow)
-nmap <leader>w :q<CR>
 
 
 """ run and debug, break point ----------------
@@ -104,10 +96,6 @@ nmap \p <Action>(ChooseDebugConfiguration)
 
 
 """ vcs action --------------------------------
-nmap <leader>gt <Action>(Vcs.UpdateProject)
-nmap <leader>gc <Action>(CheckinProject)
-nmap <leader>gp <Action>(Vcs.Push)
-nmap <leader>gb <Action>(Git.Branches)
 nmap <leader>ga <Action>(Annotate)
 nmap <leader>gd <Action>(Compare.SameVersion)
 nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
@@ -118,14 +106,5 @@ nmap \lr <Action>(leetcode.editor.RunCodeAction)
 nmap \lc <Action>(leetcode.editor.SubmitAction)
 
 
-""" idea specific --------------------------------
-nmap <leader>mj <Action>(ActivateDatabaseToolWindow)
-nmap <leader>mk <Action>(ActivateMavenToolWindow)
-nmap <leader>ml <Action>(HideAllWindows)
-nmap <leader>mm <Action>(RestoreDefaultLayout)
-nmap <leader>mn <Action>(StoreDefaultLayout)
-
-
 """ handler -------------------------------------
-sethandler <C-\> a:ide
 sethandler <C-e> n:ide

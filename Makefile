@@ -9,6 +9,7 @@ sync:
 	[ -f ~/.config/nvim/init.lua ] || ln -s $(PWD)/init.lua ~/.config/nvim/init.lua
 	[ -f ~/.config/stylua.toml ] || ln -s $(PWD)/stylua.toml ~/.config/stylua.toml
 	[ -f ~/.ideavimrc ] || ln -s $(PWD)/.ideavimrc ~/.ideavimrc
+	[ -f ~/.atamanrc.config ] || ln -s $(PWD)/.atamanrc.config ~/.atamanrc.config
 	[ -f ~/.zshrc ] || ln -s $(PWD)/.zshrc ~/.zshrc
 	[ -f ~/.zshenv ] || ln -s $(PWD)/.zshenv ~/.zshenv
 	[ -f ~/.vimrc ] || ln -s $(PWD)/.vimrc ~/.vimrc
@@ -22,6 +23,7 @@ clean:
 	rm -f ~/.zshrc
 	rm -f ~/.m2/settings.xml
 	rm -f ~/.ideavimrc
+	rm -f ~/.atamanrc.config
 	rm -f ~/.config/stylua.toml
 
 .PHONY: all clean sync
