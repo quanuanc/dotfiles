@@ -576,7 +576,6 @@ require("lazy").setup({
           cmd = {
             "beancount-language-server",
             "--stdio",
-            "stdio",
           },
           init_options = {
             journal_file = vim.loop.cwd() .. "/" .. "main.beancount",
