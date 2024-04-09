@@ -12,6 +12,8 @@ Plug 'chrisbra/matchit'
 Plug 'tpope/vim-commentary'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'tommcdo/vim-exchange'
+Plug 'kana/vim-textobj-entire'
+Plug 'michaeljsmith/vim-indent-object'
 
 
 """ set ---------------------------------
@@ -25,6 +27,8 @@ set scrolloff=3
 set sidescrolloff=8
 set ideamarks
 set nokeep-english-in-normal-and-restore-in-insert
+set quickscope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 
 """ search -------------------------------
@@ -86,12 +90,7 @@ nmap s <Action>(KJumpAction.Char2)
 
 
 """ run and debug, break point ----------------
-nmap \r <Action>(RunClass)
-nmap \R <Action>(Run)
-nmap \d <Action>(DebugClass)
-nmap \D <Action>(Debug)
 nmap \b <Action>(ToggleLineBreakpoint)
-nmap \q <Action>(Stop)
 nmap \p <Action>(ChooseDebugConfiguration)
 
 
@@ -99,11 +98,6 @@ nmap \p <Action>(ChooseDebugConfiguration)
 nmap <leader>ga <Action>(Annotate)
 nmap <leader>gd <Action>(Compare.SameVersion)
 nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
-
-
-""" leetcode -----------------------------------
-nmap \lr <Action>(leetcode.editor.RunCodeAction)
-nmap \lc <Action>(leetcode.editor.SubmitAction)
 
 
 """ handler -------------------------------------
