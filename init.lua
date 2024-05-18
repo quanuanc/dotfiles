@@ -2,7 +2,7 @@
 -- lazy --
 ----------
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
   vim.fn.system({
     "git",
     "clone",
@@ -90,15 +90,6 @@ require("lazy").setup({
   { "hrsh7th/nvim-cmp", event = "VeryLazy" },
   { "hrsh7th/cmp-nvim-lsp", event = "VeryLazy" },
   { "L3MON4D3/LuaSnip", event = "VeryLazy" },
-  {
-    "RRethy/vim-illuminate",
-    event = "VeryLazy",
-    config = function()
-      require("illuminate").configure({
-        large_file_cutoff = 5000,
-      })
-    end,
-  },
   { "inkarkat/vim-ReplaceWithRegister", event = "VeryLazy" },
   { "tpope/vim-sleuth", event = "VeryLazy" },
   {
@@ -250,13 +241,6 @@ require("lazy").setup({
     end,
   },
   {
-    "numToStr/Comment.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("Comment").setup()
-    end,
-  },
-  {
     "folke/flash.nvim",
     event = "VeryLazy",
     opts = {
@@ -301,6 +285,7 @@ require("lazy").setup({
           c = { "clang-format" },
           swift = { "swiftformat" },
           yaml = { { "prettierd", "prettier" } },
+          json = { "biome" },
         },
       })
     end,
@@ -453,7 +438,7 @@ require("lazy").setup({
       vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
       vim.o.foldlevelstart = 99
       vim.o.foldenable = true
-      local handler = function(virtText, lnum, endLnum, width, truncate)
+      local handler = function(virtText, _, _, width, truncate)
         local newVirtText = {}
         local suffix = " ... "
         local sufWidth = vim.fn.strdisplaywidth(suffix)
@@ -483,7 +468,7 @@ require("lazy").setup({
 
       require("ufo").setup({
         fold_virt_text_handler = handler,
-        provider_selector = function(bufnr, filetype, buftype)
+        provider_selector = function(_, _, _)
           return { "treesitter", "indent" }
         end,
       })
@@ -495,6 +480,8 @@ require("lazy").setup({
     event = { "BufReadPre" },
     dependencies = {
       { "hrsh7th/cmp-nvim-lsp" },
+      { "j-hui/fidget.nvim", opts = {} },
+      { "folke/neodev.nvim", opts = {} },
     },
     config = function()
       local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -527,7 +514,6 @@ require("lazy").setup({
       local lspconfig = require("lspconfig")
       local on_attach = function(client, bufnr)
         lsp_keymaps(bufnr)
-        require("illuminate").on_attach(client)
       end
 
       local lsp_servers = {
@@ -578,7 +564,7 @@ require("lazy").setup({
             "--stdio",
           },
           init_options = {
-            journal_file = vim.loop.cwd() .. "/" .. "main.beancount",
+            journal_file = vim.uv.cwd() .. "/" .. "main.beancount",
           },
         },
         jsonls = {},
@@ -663,7 +649,6 @@ local options = {
   splitbelow = true, -- force all horizontal splits to go below current window
   splitright = true, -- force all vertical splits to go to the right of current window
   swapfile = false, -- creates a swapfile
-  termguicolors = true, -- set term gui colors (most terminals support this)
   timeoutlen = 300, -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true, -- enable persistent undo
   updatetime = 300, -- faster completion (4000ms default)
@@ -768,12 +753,11 @@ keymap("n", "<leader>n", ":ASToggle<CR>", opts) -- auto save toggle
 keymap("n", "==", "<cmd>lua require('conform').format()<cr>", opts)
 
 --
-keymap("n", ",,", ":noh<CR>", opts) -- better noh, ref: https://vi.stackexchange.com/questions/184/how-can-i-clear-word-highlighting-in-the-current-document-e-g-such-as-after-se/252#252?newreg=c43d49d9c97f49c89629fb7149754e9e
+keymap("n", "<esc><esc>", ":noh<CR>", opts) -- better noh, ref: https://vi.stackexchange.com/questions/184/how-can-i-clear-word-highlighting-in-the-current-document-e-g-such-as-after-se/252#252?newreg=c43d49d9c97f49c89629fb7149754e9e
 keymap("i", "<C-a>", "<Home>", opts)
 keymap("i", "<C-e>", "<End>", opts)
 keymap("n", "yY", "^y$", opts)
 
--- edit
 keymap("n", "cx", "<cmd>lua require('substitute.exchange').operator()<CR>", opts)
 keymap("n", "cxx", "<cmd>lua require('substitute.exchange').line()<CR>", opts)
 keymap("v", "cx", "<cmd>lua require('substitute.exchange').visual()<CR>", opts)
@@ -805,30 +789,10 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
   callback = function()
-    vim.highlight.on_yank({ higroup = "Visual", timeout = 200 })
-  end,
-})
-
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-  pattern = { "*.java" },
-  callback = function()
-    vim.lsp.codelens.refresh()
-  end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-  callback = function()
-    vim.cmd("hi link illuminatedWord LspReferenceText")
-  end,
-})
-
-vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
-  callback = function()
-    local line_count = vim.api.nvim_buf_line_count(0)
-    if line_count >= 5000 then
-      vim.cmd("IlluminatePauseBuf")
-    end
+    vim.highlight.on_yank()
   end,
 })
