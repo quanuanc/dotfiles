@@ -30,5 +30,4 @@ require("lazy").setup({
   require("plugins.surround"),
   require("plugins.treesitter"),
   require("plugins.ufo"),
-  require("plugins.neoscroll"),
 })

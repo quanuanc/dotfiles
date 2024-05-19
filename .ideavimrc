@@ -96,6 +96,7 @@ nmap \p <Action>(ChooseDebugConfiguration)
 """ vcs action --------------------------------
 nmap <leader>ga <Action>(Annotate)
 nmap <leader>gd <Action>(Compare.SameVersion)
+vmap <leader>gd <Action>(CompareClipboardWithSelection)
 nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
 
 

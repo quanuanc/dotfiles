@@ -26,7 +26,7 @@ return {
         map("n", "<leader>li", "<CMD>LspInfo<CR>", "Lsp info")
         map("n", "<M-CR>", vim.lsp.buf.code_action, "Code Action")
         map("i", "<M-CR>", vim.lsp.buf.code_action, "Code Action")
-        map("n", "<leader>lr", vim.lsp.buf.rename, "Rename symbol")
+        map("n", "cd", vim.lsp.buf.rename, "Rename symbol")
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client and client.server_capabilities.documentHighlightProvider then
@@ -93,6 +93,7 @@ return {
           },
         },
       },
+      ruff = {},
       beancount = {
         cmd = {
           "beancount-language-server",
@@ -108,12 +109,15 @@ return {
       tsserver = {},
     }
 
-    require("mason").setup()
-
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
       "stylua",
+      "prettierd",
+      "clang-format",
+      "biome",
     })
+
+    require("mason").setup()
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
     require("mason-lspconfig").setup({
       handlers = {

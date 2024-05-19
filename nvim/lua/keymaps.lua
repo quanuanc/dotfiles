@@ -42,8 +42,8 @@ map("n", "<M-e>", "<CMD>Telescope buffers<CR>", opts)
 map("n", "<leader>ga", "<CMD>Gitsigns blame_line<CR>", opts)
 map("n", "<leader>gd", "<CMD>Gitsigns diffthis<CR>", opts)
 map("n", "<leader>gr", "<CMD>Gitsigns reset_hunk<CR>", opts)
-map("n", "]g", "<CMD>Gitsigns next_hunk<CR>", opts)
-map("n", "[g", "<CMD>Gitsigns prev_hunk<CR>", opts)
+map("n", "g;", "<CMD>Gitsigns next_hunk<CR>", opts)
+map("n", "g,", "<CMD>Gitsigns prev_hunk<CR>", opts)
 
 -- Lsp
 map("n", "<leader>ma", "<CMD>Mason<CR>", opts)
