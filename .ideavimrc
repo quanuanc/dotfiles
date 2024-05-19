@@ -55,8 +55,8 @@ nmap <C-S-[> :tabm-1<CR>
 nmap <C-S-]> :tabm+1<CR>
 nmap ]d <Action>(GotoNextError)
 nmap [d <Action>(GotoPreviousError)
-nmap ]g <Action>(VcsShowNextChangeMarker)
-nmap [g <Action>(VcsShowPrevChangeMarker)
+nmap g; <Action>(VcsShowNextChangeMarker)
+nmap g, <Action>(VcsShowPrevChangeMarker)
 noremap <C-h> <C-w>h
 noremap <C-l> <C-w>l
 noremap <C-j> <C-w>j
@@ -73,17 +73,16 @@ nmap zo <Action>(ExpandRegion)
 nmap zC <Action>(CollapseAllRegions)
 nmap zO <Action>(ExpandAllRegions)
 nmap gD <Action>(GotoTypeDeclaration)
-nmap gR <Action>(FindUsages)
+nmap gA <Action>(FindUsages)
 nmap <M-k> <Action>(QuickJavaDoc)
 imap <M-k> <Action>(QuickJavaDoc)
 nmap <M-j> <Action>(ShowErrorDescription)
 imap <M-j> <Action>(ShowErrorDescription)
 nmap gi <Action>(GotoImplementation)
 nmap gI <Action>(GotoSuperMethod)
-nmap gt <Action>(GotoTest)
 nmap <leader>h <Action>(HighlightUsagesInFile)
 nmap <leader>s <Action>(SelectInProjectView)
-nmap <leader>lr <Action>(RenameElement)
+nmap cd <Action>(RenameElement)
 nmap [f <Action>(MethodUp)
 nmap ]f <Action>(MethodDown)
 nmap s <Action>(KJumpAction.Char2)
@@ -101,4 +100,3 @@ nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
 
 
 """ handler -------------------------------------
-sethandler <C-e> n:ide
