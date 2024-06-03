@@ -53,8 +53,8 @@ nmap yY ^y$
 """ navigation ----------------------------
 nmap <C-S-[> :tabm-1<CR>
 nmap <C-S-]> :tabm+1<CR>
-nmap ]d <Action>(GotoNextError)
-nmap [d <Action>(GotoPreviousError)
+nmap g] <Action>(GotoNextError)
+nmap g[ <Action>(GotoPreviousError)
 nmap g; <Action>(VcsShowNextChangeMarker)
 nmap g, <Action>(VcsShowPrevChangeMarker)
 noremap <C-h> <C-w>h
@@ -91,6 +91,8 @@ nmap s <Action>(KJumpAction.Char2)
 """ run and debug, break point ----------------
 nmap \b <Action>(ToggleLineBreakpoint)
 nmap \p <Action>(ChooseDebugConfiguration)
+nmap \d <Action>(DebugClass)
+nmap \r <Action>(RunClass)
 
 
 """ vcs action --------------------------------
