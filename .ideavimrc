@@ -53,10 +53,10 @@ nmap yY ^y$
 """ navigation ----------------------------
 nmap <C-S-[> :tabm-1<CR>
 nmap <C-S-]> :tabm+1<CR>
-nmap g] <Action>(GotoNextError)
-nmap g[ <Action>(GotoPreviousError)
-nmap g; <Action>(VcsShowNextChangeMarker)
-nmap g, <Action>(VcsShowPrevChangeMarker)
+nmap ]d <Action>(GotoNextError)
+nmap [d <Action>(GotoPreviousError)
+nmap ]g <Action>(VcsShowNextChangeMarker)
+nmap [g <Action>(VcsShowPrevChangeMarker)
 noremap <C-h> <C-w>h
 noremap <C-l> <C-w>l
 noremap <C-j> <C-w>j
