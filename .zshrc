@@ -13,7 +13,7 @@ znap source zsh-users/zsh-completions
 znap source zsh-users/zsh-autosuggestions
 
 # fnm & zoxide
-znap eval fnm 'fnm env --shell zsh'
+znap eval mise 'mise activate zsh'
 znap eval zoxide 'zoxide init zsh --cmd z'
 znap eval atuin 'atuin init zsh --disable-up-arrow'
 

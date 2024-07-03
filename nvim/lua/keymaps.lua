@@ -19,9 +19,9 @@ map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
 -- Buffer barbar.nvim
-map("n", "<C-S-h>", "<CMD>BufferPrevious<CR>", opts)
-map("n", "<C-S-l>", "<CMD>BufferNext<CR>", opts)
-map("n", "<leader>w", "<CMD>BufferClose<CR>", opts)
+map("n", "<C-S-h>", "<CMD>bp<CR>", opts)
+map("n", "<C-S-l>", "<CMD>bn<CR>", opts)
+map("n", "<leader>w", "<CMD>q<CR>", opts)
 
 -- Resize with arrows
 map("n", "<C-Up>", "<CMD>resize -2<CR>", opts)
