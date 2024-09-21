@@ -84,29 +84,7 @@ return {
           },
         },
       },
-      pyright = {
-        settings = {
-          python = {
-            analysis = {
-              typeCheckingMode = "off",
-            },
-          },
-        },
-      },
-      ruff = {},
-      beancount = {
-        cmd = {
-          "beancount-language-server",
-          "--stdio",
-        },
-        init_options = {
-          journal_file = vim.uv.cwd() .. "/" .. "main.beancount",
-        },
-      },
       jsonls = {},
-      clangd = {},
-      rust_analyzer = {},
-      tsserver = {},
     }
 
     local ensure_installed = vim.tbl_keys(servers or {})
