@@ -2,17 +2,28 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local platform = wezterm.target_triple
 
+-- config --
 local config = {}
-local mod = {}
-
-config = wezterm.config_builder()
-
--- keymaps --
 config.disable_default_key_bindings = true
 config.leader = { key = " ", mods = "CTRL" }
+config = wezterm.config_builder()
+config.color_scheme = "Terminal Basic (Gogh)"
+config.tab_bar_at_bottom = true
+config.hide_tab_bar_if_only_one_tab = true
+config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
+config.initial_cols = 155
+config.initial_rows = 44
+config.font_size = 13
+config.front_end = "WebGpu"
+
+local mod = {}
 mod.SUPER = "SUPER"
 mod.SUPER_REV = "SUPER|CTRL"
+mod.CTRL = "CTRL"
+
+-- keymaps --
 local keys = {
+  { key = "Tab", mods = mod.CTRL, action = act.ActivateTabRelative(1) },
   { key = [[\]], mods = mod.SUPER, action = act({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
   { key = [[\]], mods = mod.SUPER_REV, action = act({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
   { key = "h", mods = mod.SUPER, action = act({ ActivatePaneDirection = "Left" }) },
@@ -100,15 +111,6 @@ local key_tables = {
 config.keys = keys
 config.key_tables = key_tables
 
--- config --
-config.color_scheme = "Afterglow"
-config.tab_bar_at_bottom = true
-config.hide_tab_bar_if_only_one_tab = true
-config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
-config.initial_cols = 155
-config.initial_rows = 44
-config.font_size = 13
-config.front_end = "WebGpu"
 
 -- platform --
 if string.find(platform, "windows") then
