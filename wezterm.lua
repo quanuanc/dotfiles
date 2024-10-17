@@ -7,10 +7,9 @@ local config = {}
 config.disable_default_key_bindings = true
 config.leader = { key = " ", mods = "CTRL" }
 config = wezterm.config_builder()
-config.color_scheme = "Terminal Basic (Gogh)"
+-- config.color_scheme = "Terminal Basic (Gogh)"
 config.tab_bar_at_bottom = true
 config.hide_tab_bar_if_only_one_tab = true
-config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 config.initial_cols = 155
 config.initial_rows = 44
 config.font_size = 13
