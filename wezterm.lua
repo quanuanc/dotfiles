@@ -3,17 +3,18 @@ local act = wezterm.action
 local platform = wezterm.target_triple
 
 -- config --
-local config = {}
-config.disable_default_key_bindings = true
-config.leader = { key = " ", mods = "CTRL" }
-config = wezterm.config_builder()
--- config.color_scheme = "Terminal Basic (Gogh)"
-config.tab_bar_at_bottom = true
-config.hide_tab_bar_if_only_one_tab = true
-config.initial_cols = 155
-config.initial_rows = 44
-config.font_size = 13
-config.front_end = "WebGpu"
+local M = {}
+
+M.disable_default_key_bindings = true
+M.leader = { key = " ", mods = "CTRL" }
+M = wezterm.config_builder()
+M.tab_bar_at_bottom = true
+M.hide_tab_bar_if_only_one_tab = true
+M.initial_cols = 155
+M.initial_rows = 44
+M.font_size = 13
+M.front_end = "WebGpu"
+M.color_scheme = "Dracula"
 
 local mod = {}
 mod.SUPER = "SUPER"
@@ -107,18 +108,17 @@ local key_tables = {
     { key = "q", action = "PopKeyTable" },
   },
 }
-config.keys = keys
-config.key_tables = key_tables
-
+M.keys = keys
+M.key_tables = key_tables
 
 -- platform --
 if string.find(platform, "windows") then
-  config.default_prog = { "powershell.exe" }
+  M.default_prog = { "powershell.exe" }
 elseif string.find(platform, "darwin") then
-  config.font = wezterm.font_with_fallback({
+  M.font = wezterm.font_with_fallback({
     "JetBrains Mono",
     "PingFang SC",
   })
 end
 
-return config
+return M
