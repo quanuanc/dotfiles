@@ -27,8 +27,6 @@ set scrolloff=3
 set sidescrolloff=8
 set ideamarks
 set nokeep-english-in-normal-and-restore-in-insert
-set quickscope
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 
 """ search -------------------------------
@@ -85,7 +83,7 @@ nmap <leader>s <Action>(SelectInProjectView)
 nmap cd <Action>(RenameElement)
 nmap [f <Action>(MethodUp)
 nmap ]f <Action>(MethodDown)
-nmap s <Action>(KJumpAction.Char2)
+map s <Action>(flash.search)
 
 
 """ run and debug, break point ----------------
