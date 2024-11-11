@@ -1,0 +1,20 @@
+[user]
+	name = Quanuanc
+	email = quanuanc@outlook.com
+[diff]
+  tool = difftastic
+[difftool]
+  prompt = false
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+  difftool = true
+[core]
+	excludesfile = /Users/cheng/.gitignore
+	autocrlf = input
+[credential "https://gitee.com"]
+	provider = generic
+[pull]
+	rebase = true
+[alias]
+  df = difftool
