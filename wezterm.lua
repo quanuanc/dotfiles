@@ -15,6 +15,7 @@ M.initial_rows = 44
 M.font_size = 13
 M.front_end = "WebGpu"
 M.color_scheme = "Dracula"
+M.command_palette_rows = 7
 
 local mod = {}
 mod.SUPER = "SUPER"

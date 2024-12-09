@@ -1,7 +1,6 @@
 if status is-interactive
   zoxide init fish | source
-  atuin init fish | source
-  mise activate fish | source
+  atuin init fish --disable-up-arrow | source
 
   set -gx http_proxy http://127.0.0.1:6152
   set -gx https_proxy http://127.0.0.1:6152
