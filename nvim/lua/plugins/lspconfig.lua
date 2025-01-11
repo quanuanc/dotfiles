@@ -4,9 +4,7 @@ return {
     { "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
     { "williamboman/mason-lspconfig.nvim" },
     { "WhoIsSethDaniel/mason-tool-installer.nvim" },
-    { "hrsh7th/cmp-nvim-lsp" },
     { "j-hui/fidget.nvim", opts = {} },
-    { "folke/neodev.nvim", opts = {} },
   },
   config = function()
     vim.api.nvim_create_autocmd("LspAttach", {
@@ -60,7 +58,6 @@ return {
     })
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
     local servers = {
       lua_ls = {

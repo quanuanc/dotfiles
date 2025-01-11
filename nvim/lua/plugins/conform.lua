@@ -9,7 +9,7 @@ return {
         json = { "biome" },
         python = { "ruff_format" },
         beancount = { "bean_black" },
-        ["_"] = { { "prettierd", "prettier" } },
+        ["_"] = { "prettierd", "prettier" },
       },
       formatters = {
         bean_black = {

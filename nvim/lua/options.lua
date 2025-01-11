@@ -1,5 +1,5 @@
 vim.opt.backup = false
-vim.opt.completeopt = { "menuone", "noselect" }
+vim.opt.completeopt = { "menuone", "noselect", "noinsert" }
 vim.opt.conceallevel = 0
 vim.opt.fileencoding = "utf-8"
 vim.opt.hlsearch = true
@@ -29,7 +29,7 @@ vim.opt.linebreak = true
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 vim.opt.laststatus = 0
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 vim.opt.breakindent = true
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 vim.opt.iskeyword:append("-") -- hyphenated words recognized by searches

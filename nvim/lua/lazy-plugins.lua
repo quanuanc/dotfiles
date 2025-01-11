@@ -20,7 +20,7 @@ require("lazy").setup({
   require("plugins.lspconfig"),
   require("plugins.conform"),
   require("plugins.mason"),
-  require("plugins.cmp"),
+  require("plugins.compl"),
   require("plugins.auto-save"),
   require("plugins.autopairs"),
   require("plugins.flash"),
