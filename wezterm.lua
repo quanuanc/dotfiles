@@ -3,11 +3,9 @@ local act = wezterm.action
 local platform = wezterm.target_triple
 
 -- config --
-local M = {}
-
+local M = wezterm.config_builder()
 M.disable_default_key_bindings = true
 M.leader = { key = " ", mods = "CTRL" }
-M = wezterm.config_builder()
 M.tab_bar_at_bottom = true
 M.hide_tab_bar_if_only_one_tab = true
 M.initial_cols = 155
@@ -21,6 +19,7 @@ local mod = {}
 mod.SUPER = "SUPER"
 mod.SUPER_REV = "SUPER|CTRL"
 mod.CTRL = "CTRL"
+mod.CTRL_SHIFT = "SHIFT|CTRL"
 
 -- keymaps --
 local keys = {
