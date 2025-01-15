@@ -1,3 +1,4 @@
+vim.opt.fillchars:append({ eob = " " })
 vim.opt.backup = false
 vim.opt.completeopt = { "menuone", "noselect", "noinsert" }
 vim.opt.conceallevel = 0
@@ -29,7 +30,6 @@ vim.opt.linebreak = true
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 vim.opt.laststatus = 0
-vim.opt.clipboard = "unnamedplus"
 vim.opt.breakindent = true
 vim.opt.inccommand = "split"
 vim.opt.iskeyword:append("-") -- hyphenated words recognized by searches

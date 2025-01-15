@@ -42,8 +42,8 @@ map("n", "<M-e>", "<CMD>Telescope buffers<CR>", opts)
 map("n", "<leader>ga", "<CMD>Gitsigns blame_line<CR>", opts)
 map("n", "<leader>gd", "<CMD>Gitsigns diffthis<CR>", opts)
 map("n", "<leader>gr", "<CMD>Gitsigns reset_hunk<CR>", opts)
-map("n", "g;", "<CMD>Gitsigns next_hunk<CR>", opts)
-map("n", "g,", "<CMD>Gitsigns prev_hunk<CR>", opts)
+map("n", "]g", "<CMD>Gitsigns next_hunk<CR>", opts)
+map("n", "[g", "<CMD>Gitsigns prev_hunk<CR>", opts)
 
 -- Lsp
 map("n", "<leader>ma", "<CMD>Mason<CR>", opts)
@@ -59,11 +59,3 @@ map("n", "yY", "^y$", opts)
 map("n", "cx", "<CMD>lua require('substitute.exchange').operator()<CR>", opts)
 map("n", "cxx", "<CMD>lua require('substitute.exchange').line()<CR>", opts)
 map("v", "cx", "<CMD>lua require('substitute.exchange').visual()<CR>", opts)
-
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
