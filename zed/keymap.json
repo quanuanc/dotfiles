@@ -1,0 +1,39 @@
+[
+  {
+    "bindings": {
+      "cmd-1": "project_panel::ToggleFocus"
+    },
+    "context": "Workspace"
+  },
+  {
+    "bindings": {
+      "ctrl-shift-h": "pane::ActivatePrevItem",
+      "ctrl-shift-l": "pane::ActivateNextItem"
+    },
+    "context": "Pane"
+  },
+  {
+    "bindings": {
+      "ctrl-n": [
+        "terminal::SendKeystroke",
+        "down"
+      ],
+      "ctrl-p": [
+        "terminal::SendKeystroke",
+        "up"
+      ]
+    },
+    "context": "Terminal"
+  },
+  {
+    "bindings": {
+      "= =": "editor::Format",
+      "[ g": "editor::GoToPrevHunk",
+      "] g": "editor::GoToHunk",
+      "g i": "editor::GoToImplementation",
+      "space g a": "editor::ToggleGitBlame",
+      "space g r": "editor::RevertSelectedHunks"
+    },
+    "context": "vim_mode == normal"
+  }
+]

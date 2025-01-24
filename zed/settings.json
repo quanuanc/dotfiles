@@ -1,0 +1,58 @@
+{
+  "assistant": {
+    "default_model": {
+      "model": "claude-3-5-sonnet-latest",
+      "provider": "zed.dev"
+    },
+    "provider": null,
+    "version": "2"
+  },
+  "auto_install_extensions": {
+    "beancount": true,
+    "nix": true
+  },
+  "autosave": "on_focus_change",
+  "base_keymap": "VSCode",
+  "buffer_font_family": "Menlo",
+  "buffer_line_height": "comfortable",
+  "cursor_blink": false,
+  "ensure_final_newline_on_save": false,
+  "extend_comment_on_newline": false,
+  "features": {
+    "copilot": false,
+    "inline_completion_provider": "none"
+  },
+  "format_on_save": "off",
+  "lsp": {
+    "nil": {
+      "settings": {
+        "formatting": {
+          "command": [
+            "alejandra",
+            "--"
+          ]
+        }
+      }
+    }
+  },
+  "proxy": "socks5://127.0.0.1:6153",
+  "relative_line_numbers": true,
+  "remove_trailing_whitespace_on_save": false,
+  "restore_on_startup": "none",
+  "scrollbar": {
+    "show": "never"
+  },
+  "tab_size": 2,
+  "terminal": {
+    "copy_on_select": true,
+    "option_as_meta": true,
+    "toolbar": {
+      "title": false
+    }
+  },
+  "vim": {
+    "use_smartcase_find": true,
+    "use_system_clipboard": "always"
+  },
+  "vim_mode": true
+}

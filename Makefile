@@ -14,6 +14,8 @@ sync:
 	[ -f ~/.config/fish ] || ln -s $(PWD)/fish ~/.config/fish
 	[ -f ~/.gitignore ] || ln -s $(PWD)/git/gitignore ~/.gitignore
 	[ -f ~/.gitconfig ] || ln -s $(PWD)/git/gitconfig ~/.gitconfig
+	[ -f ~/.config/zed/settings.json ] || ln -s $(PWD)/zed/settings.json ~/.config/zed/settings.json
+	[ -f ~/.config/zed/keymap.json ] || ln -s $(PWD)/zed/keymap.json ~/.config/zed/keymap.json
 
 clean:
 	rm -f ~/.vimrc
@@ -25,6 +27,9 @@ clean:
 	rm -f ~/.atamanrc.config
 	rm -f ~/.config/stylua.toml
 	rm -f ~/.gitconfig
+	rm -f ~/.gitignore
+	rm -f ~/.config/zed/settings.json
+	rm -f ~/.config/zed/keymap.json
 	rm -f ~/.gitignore
 
 .PHONY: all clean sync
