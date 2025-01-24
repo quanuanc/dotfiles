@@ -2,10 +2,11 @@ tap "homebrew/bundle"
 tap "laishulu/homebrew"
 tap "quanuanc/tap"
 brew "atuin"
+brew "btop"
+brew "butane"
 brew "difftastic"
 brew "fd"
 brew "fish"
-brew "htop"
 brew "iperf"
 brew "just"
 brew "macmon"
@@ -14,6 +15,7 @@ brew "mise"
 brew "neovim"
 brew "nexttrace"
 brew "ripgrep"
+brew "rsync"
 brew "rustscan"
 brew "smartmontools"
 brew "tokei"
@@ -25,10 +27,11 @@ cask "cursor"
 cask "geoport"
 cask "google-chrome"
 cask "iina"
-cask "jetbrains-toolbox"
+cask "intellij-idea"
 cask "jitouch"
 cask "keka"
 cask "mac-mouse-fix"
+cask "mist"
 cask "neteasemusic"
 cask "orbstack"
 cask "pictogram"
@@ -47,7 +50,6 @@ mas "Amphetamine", id: 937984704
 mas "CleanMyKeyboard", id: 6468120888
 mas "ConsoleLink", id: 6448843682
 mas "Hex Fiend", id: 1342896380
-mas "Hush", id: 1544743900
 mas "Interactful", id: 1528095640
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft PowerPoint", id: 462062816
