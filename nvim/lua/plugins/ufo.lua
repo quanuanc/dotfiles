@@ -1,6 +1,7 @@
 return {
   "kevinhwang91/nvim-ufo",
   dependencies = { "kevinhwang91/promise-async" },
+  cond = require('utils').not_in_vscode,
   event = "VeryLazy",
   config = function()
     vim.o.foldcolumn = "0" -- '0' is not bad

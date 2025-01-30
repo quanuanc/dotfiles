@@ -1,5 +1,6 @@
 return {
   "windwp/nvim-autopairs",
+  cond = require('utils').not_in_vscode,
   event = "InsertEnter",
   dependencies = {
     {

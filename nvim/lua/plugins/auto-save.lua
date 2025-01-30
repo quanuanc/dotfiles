@@ -4,4 +4,5 @@ return {
   config = function()
     require("auto-save").setup()
   end,
+  cond = require('utils').not_in_vscode
 }

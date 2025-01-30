@@ -1,6 +1,7 @@
 return {
   "williamboman/mason.nvim",
   cmd = "Mason",
+  cond = require('utils').not_in_vscode,
   config = function()
     local settings = {
       ui = {

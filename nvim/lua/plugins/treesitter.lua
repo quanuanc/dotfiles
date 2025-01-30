@@ -1,6 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
+  cond = require('utils').not_in_vscode,
   event = "BufReadPost",
   config = function()
     require("nvim-treesitter.configs").setup({

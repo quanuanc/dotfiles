@@ -1,6 +1,7 @@
 return {
   "stevearc/conform.nvim",
   event = "VeryLazy",
+  cond = require('utils').not_in_vscode,
   config = function()
     require("conform").setup({
       formatters_by_ft = {
