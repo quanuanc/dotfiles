@@ -11,6 +11,6 @@ if status is-interactive
 
   function fish_greeting; end
 else
-  mise activate fish --shims | source
+
 end
 

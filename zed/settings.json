@@ -8,16 +8,14 @@
     "version": "2"
   },
   "auto_install_extensions": {
-    "beancount": true,
-    "nix": true
+    "beancount": false,
+    "nix": false
   },
   "autosave": "on_focus_change",
   "base_keymap": "VSCode",
   "buffer_font_family": "Menlo",
   "buffer_line_height": "comfortable",
   "cursor_blink": false,
-  "ensure_final_newline_on_save": false,
-  "extend_comment_on_newline": false,
   "features": {
     "copilot": false,
     "inline_completion_provider": "none"
@@ -27,10 +25,7 @@
     "nil": {
       "settings": {
         "formatting": {
-          "command": [
-            "alejandra",
-            "--"
-          ]
+          "command": ["alejandra", "--"]
         }
       }
     }
