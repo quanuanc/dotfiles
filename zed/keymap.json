@@ -2,7 +2,7 @@
   {
     "context": "Workspace",
     "bindings": {
-      "cmd-1": "project_panel::ToggleFocus"
+      "cmd-1": "workspace::ToggleLeftDock"
     }
   },
   {

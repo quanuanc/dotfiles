@@ -5,11 +5,12 @@ local platform = wezterm.target_triple
 -- config --
 local M = wezterm.config_builder()
 M.disable_default_key_bindings = true
+M.window_close_confirmation = 'NeverPrompt'
 M.leader = { key = " ", mods = "CTRL" }
 M.tab_bar_at_bottom = true
 M.hide_tab_bar_if_only_one_tab = true
-M.initial_cols = 155
-M.initial_rows = 44
+M.initial_cols = 150
+M.initial_rows = 42
 M.font_size = 13
 M.front_end = "WebGpu"
 M.color_scheme = "Dracula"
