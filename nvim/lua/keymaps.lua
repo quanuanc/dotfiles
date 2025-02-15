@@ -59,3 +59,7 @@ map("n", "yY", "^y$", opts)
 map("n", "cx", "<CMD>lua require('substitute.exchange').operator()<CR>", opts)
 map("n", "cxx", "<CMD>lua require('substitute.exchange').line()<CR>", opts)
 map("v", "cx", "<CMD>lua require('substitute.exchange').visual()<CR>", opts)
+
+map("n", "gr", "<CMD>lua require('substitute').operator()<CR>", opts)
+map("n", "grr", "<CMD>lua require('substitute').line()<CR>", opts)
+map("x", "gr", "<CMD>lua require('substitute').visual()<CR>", opts)
