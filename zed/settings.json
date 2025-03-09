@@ -1,8 +1,20 @@
 {
+  "ssh_connections": [
+    {
+      "host": "echo",
+      "projects": [
+        {
+          "paths": [
+            "~/docker-compose"
+          ]
+        }
+      ]
+    }
+  ],
   "assistant": {
     "default_model": {
-      "provider": "openai",
-      "model": "google/gemini-2.0-pro-exp-02-05:free"
+      "provider": "zed.dev",
+      "model": "claude-3-7-sonnet-latest"
     },
     "version": "2"
   },
@@ -10,11 +22,11 @@
     "openai": {
       "api_url": "https://openrouter.ai/api/v1",
       "available_models": [
-        {
-          "name": "google/gemini-2.0-pro-exp-02-05:free",
-          "display_name": "gemini-2.0",
-          "max_tokens": 2000000
-        }
+        // {
+        //   "name": "google/gemini-2.0-pro-exp-02-05:free",
+        //   "display_name": "gemini-2.0",
+        //   "max_tokens": 2000000
+        // }
       ],
       "version": "1"
     }
@@ -25,12 +37,11 @@
   },
   "autosave": "on_focus_change",
   "base_keymap": "VSCode",
-  "buffer_font_family": "Menlo",
   "buffer_line_height": "comfortable",
   "cursor_blink": false,
   "features": {
     "copilot": false,
-    "inline_completion_provider": "none"
+    "edit_prediction_provider": "zed"
   },
   "format_on_save": "off",
   "lsp": {
@@ -42,12 +53,12 @@
       }
     }
   },
-  // "proxy": "socks5://127.0.0.1:6153",
+  "proxy": "http://127.0.0.1:6152",
   "relative_line_numbers": true,
-  "remove_trailing_whitespace_on_save": false,
+  // "remove_trailing_whitespace_on_save": false,
   "restore_on_startup": "none",
   "scrollbar": {
-    "show": "never"
+    "show": "auto"
   },
   "tab_size": 2,
   "terminal": {

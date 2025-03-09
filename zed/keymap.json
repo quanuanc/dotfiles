@@ -22,8 +22,8 @@
   {
     "context": "vim_mode == normal",
     "bindings": {
-      "s": ["vim::PushOperator", { "Sneak": {} }],
-      "S": ["vim::PushOperator", { "SneakBackward": {} }],
+      "s": ["vim::PushSneak", {}],
+      "S": ["vim::PushSneakBackward", {}],
       "= =": "editor::Format",
       "[ g": "editor::GoToPrevHunk",
       "] g": "editor::GoToHunk",
@@ -35,8 +35,8 @@
   {
     "context": "vim_mode == visual",
     "bindings": {
-      "s": ["vim::PushOperator", { "Sneak": {} }],
-      "S": ["vim::PushOperator", { "SneakBackward": {} }],
+      "s": ["vim::PushSneak", {}],
+      "S": ["vim::PushSneakBackward", {}],
       "= =": "editor::FormatSelections",
       "space g r": "editor::RevertSelectedHunks"
     }
