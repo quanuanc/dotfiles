@@ -15,6 +15,7 @@ M.font_size = 13
 M.front_end = "WebGpu"
 M.color_scheme = "Dracula"
 M.command_palette_rows = 7
+M.max_fps = 120
 
 local mod = {}
 mod.SUPER = "SUPER"
