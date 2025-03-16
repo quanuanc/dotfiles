@@ -1,20 +1,19 @@
 let mapleader = " "
-nmap <C-Space> <Action>(LeaderAction)
 
 """ Plugins -----------------------------
 Plugin 'tpope/vim-surround'
-" 命令 => o: open, i: split, s: vsplit, m: menu
 Plug 'preservim/nerdtree'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'machakann/vim-highlightedyank'
-Plug 'dbakker/vim-paragraph-motion'
 Plug 'chrisbra/matchit'
 Plug 'tpope/vim-commentary'
-Plug 'vim-scripts/argtextobj.vim'
 Plug 'tommcdo/vim-exchange'
+set peekaboo
+Plug 'vim-scripts/argtextobj.vim'
 Plug 'kana/vim-textobj-entire'
-Plug 'michaeljsmith/vim-indent-object'
-
+set functiontextobj
+set switch
+let g:switch_definitions = 'group:basic,group:java,group:rspec'
 
 """ set ---------------------------------
 set number relativenumber
@@ -46,6 +45,7 @@ imap <C-e> <End>
 vmap v <Action>(EditorSelectWord)
 vmap V <Action>(EditorUnSelectWord)
 nmap yY ^y$
+noremap + :Switch<CR>
 
 
 """ navigation ----------------------------
@@ -59,8 +59,8 @@ noremap <C-h> <C-w>h
 noremap <C-l> <C-w>l
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
-nmap <C-o> <Action>(Back)
-nmap <C-i> <Action>(Forward)
+"nmap <C-o> <Action>(Back)
+"nmap <C-i> <Action>(Forward)
 
 
 """ some action ---------------------------
@@ -83,7 +83,8 @@ nmap <leader>s <Action>(SelectInProjectView)
 nmap cd <Action>(RenameElement)
 nmap [f <Action>(MethodUp)
 nmap ]f <Action>(MethodDown)
-map s <Action>(flash.search)
+nmap s <Action>(flash.search)
+vmap s <Action>(flash.search)
 
 
 """ run and debug, break point ----------------
@@ -101,3 +102,33 @@ nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
 
 
 """ handler -------------------------------------
+sethandler <S-CR> a:vim
+sethandler <S-Left> a:vim
+sethandler <S-Up> a:vim
+sethandler <S-Right> a:vim
+sethandler <S-Down> a:vim
+sethandler <C-2> a:vim
+sethandler <C-S-2> a:vim
+sethandler <C-6> a:vim
+sethandler <C-S-6> a:vim
+sethandler <C-A> a:vim
+sethandler <C-B> a:vim
+sethandler <C-C> a:vim
+sethandler <C-D> a:vim
+sethandler <C-E> a:vim
+sethandler <C-F> a:vim
+sethandler <C-G> a:vim
+sethandler <C-H> a:vim
+sethandler <C-I> a:vim
+sethandler <C-J> a:vim
+sethandler <C-K> a:vim
+sethandler <C-L> a:vim
+sethandler <C-M> a:vim
+sethandler <C-N> a:vim
+sethandler <C-O> a:vim
+sethandler <C-P> a:vim
+sethandler <C-R> a:vim
+sethandler <C-S> a:vim
+sethandler <C-T> a:vim
+sethandler <C-V> a:vim
+sethandler <C-W> a:vim
