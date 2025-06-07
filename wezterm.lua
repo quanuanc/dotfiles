@@ -20,14 +20,15 @@ M.max_fps = 120
 local mod = {}
 mod.SUPER = "SUPER"
 mod.SUPER_REV = "SUPER|CTRL"
+mod.SUPER_SHIFT = "SUPER|SHIFT"
 mod.CTRL = "CTRL"
 mod.CTRL_SHIFT = "SHIFT|CTRL"
 
 -- keymaps --
 local keys = {
   { key = "Tab", mods = mod.CTRL, action = act.ActivateTabRelative(1) },
-  { key = [[\]], mods = mod.SUPER, action = act({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
-  { key = [[\]], mods = mod.SUPER_REV, action = act({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
+  { key = "d", mods = mod.SUPER, action = act({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
+  { key = "d", mods = mod.SUPER_SHIFT, action = act({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
   { key = "h", mods = mod.SUPER, action = act({ ActivatePaneDirection = "Left" }) },
   { key = "j", mods = mod.SUPER, action = act({ ActivatePaneDirection = "Down" }) },
   { key = "k", mods = mod.SUPER, action = act({ ActivatePaneDirection = "Up" }) },

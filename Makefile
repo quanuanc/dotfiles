@@ -1,5 +1,8 @@
 all: sync
 
+nvim:
+	[ -f ~/.config/nvim ] || ln -s $(PWD)/nvim ~/.config/nvim
+
 sync:
 	mkdir -p ~/.config/wezterm
 	mkdir -p ~/.m2
