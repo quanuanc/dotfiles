@@ -27,12 +27,11 @@ mod.CTRL_SHIFT = "SHIFT|CTRL"
 -- keymaps --
 local keys = {
   { key = "Tab", mods = mod.CTRL, action = act.ActivateTabRelative(1) },
+  { key = "Tab", mods = mod.CTRL_SHIFT, action = act.ActivateTabRelative(-1) },
   { key = "d", mods = mod.SUPER, action = act({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
   { key = "d", mods = mod.SUPER_SHIFT, action = act({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
-  { key = "h", mods = mod.SUPER, action = act({ ActivatePaneDirection = "Left" }) },
-  { key = "j", mods = mod.SUPER, action = act({ ActivatePaneDirection = "Down" }) },
-  { key = "k", mods = mod.SUPER, action = act({ ActivatePaneDirection = "Up" }) },
-  { key = "l", mods = mod.SUPER, action = act({ ActivatePaneDirection = "Right" }) },
+  { key = "]", mods = mod.SUPER, action = act({ ActivatePaneDirection = "Next" }) },
+  { key = "[", mods = mod.SUPER, action = act({ ActivatePaneDirection = "Prev" }) },
 
   { key = "p", mods = mod.SUPER, action = act.ActivateCommandPalette },
   { key = "f", mods = mod.SUPER, action = act.Search({ CaseInSensitiveString = "" }) },
@@ -59,8 +58,6 @@ local keys = {
   { key = "c", mods = mod.SUPER, action = act.CopyTo("Clipboard") },
   { key = "v", mods = mod.SUPER, action = act.PasteFrom("Clipboard") },
   { key = "w", mods = mod.SUPER, action = act.CloseCurrentPane({ confirm = false }) },
-  { key = "[", mods = mod.SUPER, action = act.ActivateTabRelative(-1) },
-  { key = "]", mods = mod.SUPER, action = act.ActivateTabRelative(1) },
   { key = "n", mods = mod.SUPER, action = act.SpawnWindow },
   { key = "i", mods = mod.SUPER, action = act.QuickSelect },
   { key = "e", mods = mod.SUPER, action = act.ActivateCopyMode },
