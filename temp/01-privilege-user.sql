@@ -1,2 +1,0 @@
-CREATE
-    USER tf_super_test WITH PASSWORD 'secure_password' SUPERUSER CREATEDB CREATEROLE;
