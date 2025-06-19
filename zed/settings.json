@@ -2,38 +2,30 @@
   "theme": "Ayu Light",
   "ssh_connections": [
     {
-      "host": "echo",
-      "projects": [
-        {
-          "paths": [
-            "~/docker-compose"
-          ]
-        }
-      ]
-    },
-    {
-      "host": "optl",
+      "host": "androidl",
       "projects": [
         {
           "paths": [
             "/etc/nginx"
           ]
+        },
+        {
+          "paths": [
+            "/etc/ssh"
+          ]
         }
       ]
-    },
-    {
-      "host": "optl",
-      "projects": []
     }
   ],
   "tabs": {
     "file_icons": true
   },
   "agent": {
+    "always_allow_tool_actions": true,
     "default_profile": "ask",
     "default_model": {
-      "provider": "openai",
-      "model": "anthropic/claude-3.7-sonnet"
+      "provider": "copilot_chat",
+      "model": "gpt-4.1"
     },
     "version": "2",
     "dock": null
@@ -43,21 +35,10 @@
       "api_url": "https://openrouter.ai/api/v1",
       "available_models": [
         {
-          "name": "anthropic/claude-3.7-sonnet",
-          "display_name": "Claude 3.7 Sonnet",
+          "name": "anthropic/claude-sonnet-4",
+          "display_name": "Claude Sonnet 4",
           "max_tokens": 200000
-        },
-        {
-          "name": "deepseek/deepseek-r1",
-          "display_name": "DeepSeek: R1",
-          "max_tokens": 64000
-        },
-        {
-          "name": "deepseek/deepseek-chat",
-          "display_name": "DeepSeek: V3",
-          "max_tokens": 64000
         }
-
       ],
       "version": "1"
     }
