@@ -1,0 +1,8 @@
+# shell-integration-features = no-cursor
+macos-option-as-alt = true
+mouse-hide-while-typing = true
+theme = Dracula+
+window-padding-x = 2
+window-padding-y = 2
+copy-on-select = clipboard
+window-save-state = always
